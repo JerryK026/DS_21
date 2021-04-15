@@ -28,7 +28,6 @@ class Student implements Comparable<Student> {
 }
 
 public class 노력상{
-
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
@@ -64,6 +63,5 @@ public class 노력상{
         for(Student s: arr) {
             out.println(s.name);
         }
-
     }
 }
