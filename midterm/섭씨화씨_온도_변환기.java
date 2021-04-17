@@ -15,7 +15,7 @@ interface Temperature {
 }
 
 public class 섭씨화씨_온도_변환기 implements Temperature {
-    
+
     double cel = 0;
     double fah = 0;
 
