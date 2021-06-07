@@ -35,21 +35,22 @@ public class treeTraversal {
         sb.append(node.val).append(" ");
     }
 
-    static void levelorder_main(Node root) {
-        sb.append(root.val).append(" ");
-        levelorder(root);
-    }
+    static Queue<Node> q = new LinkedList<>();
 
     static void levelorder(Node node) {
-        if(node == null) return;
-        if(node.left != null) {
-            sb.append(node.left.val).append(" ");
+        q.add(node);
+        while (!q.isEmpty()) {
+            Node cur = q.poll();
+            sb.append(cur.val).append(" ");
+
+            if(cur.left != null) {
+                q.add(cur.left);
+            }
+
+            if(cur.right != null) {
+                q.add(cur.right);
+            }
         }
-        if(node.right != null) {
-            sb.append(node.right.val).append(" ");
-        }
-        levelorder(node.left);
-        levelorder(node.right);
     }
 
     public static void main(String[] args) throws IOException {
@@ -100,7 +101,7 @@ public class treeTraversal {
         sb.append("\n");
         postorder(tree.get(rootKey));
         sb.append("\n");
-        levelorder_main(tree.get(rootKey));
+        levelorder(tree.get(rootKey));
 
         System.out.println(sb.toString());
     }
