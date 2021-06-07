@@ -3,7 +3,7 @@ package finalterm;
 import java.util.*;
 import java.io.*;
 
-public class minMax {
+public class MinMax {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         Stack<Integer> reg = new Stack<>();
